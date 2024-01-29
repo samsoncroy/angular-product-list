@@ -1,0 +1,22 @@
+
+<section class="product__section">
+    <h1>Products</h1>
+    <div class="production__container">
+        <div class="products__container-items" *ngFor="let product of products;let idx = index">
+            <div class="item__img">
+                <img src={{product.imageUrl}} alt="item-img">
+            </div>
+            <div class="item__txt">
+                <h1> <span>{{product.name}}</span></h1>
+                <p> <span>{{product.brand}}</span></p>
+                <p>Price : $<span>{{product.price}}</span></p>
+                <div class="view__btn">
+                    <button (click) = "showDescription(idx)">View Details</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="description__container" *ngIf="selectedDescription">
+<div class="description__container">{{selectedDescription}}</div>
+</section>
